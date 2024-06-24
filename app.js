@@ -112,10 +112,10 @@ function takeCommand(message) {
     } else {
       speak("You have no notes.");
     }
-  } else if (message.includes('weather')) {
+  } else if (message.includes('')) {
     const apiKey = '6557d74e50743d4a8ef0866517997b1a'; // Replace with your actual API key
-    const city = 'germany'; // Replace with the desired city or make it dynamic
-    fetch(`https://api.openweathermap.org/data/2.5/weather?id=${city}&appid=${apiKey}`)
+    const city = 'tumkur'; // Replace with the desired city or make it dynamic
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
      .then(data => {
   if (data.weather) {
     const weather = `The weather in ${data.name} is ${data.weather[0].description} with a temperature of ${(data.main.temp - 273.15).toFixed(2)}°C.`;
